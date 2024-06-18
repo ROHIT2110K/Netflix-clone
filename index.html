@@ -38,7 +38,7 @@
      
     }
     body{
-      background-color: #000;
+      background-color: #eee8e8;
     }
     
    
@@ -125,12 +125,25 @@
         display: flex;
       align-items: center;
       }
+     form #email{
+      margin-left: 12%;
+     }
+     form button{
+        margin: 2% 32%;
+      }
     }
     #email {
       border-radius: 1px;
       background-color: rgba(5, 3, 3, 0.216);
       backdrop-filter: blur(10px);
       margin-top: 40px;padding: 10px;
+    }
+    button{
+      padding: 10px 20px;
+      background-color: rgb(241, 25, 25);
+      border: 1px solid  #fff;
+      border-radius: 10px;
+
     }
     hr{
       
@@ -162,6 +175,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 5px;
     }
   </style>
   <body>
@@ -202,15 +216,12 @@
           >Ready to watch? Enter your email to create or restart your
           membership.</b
         ><br />
-       
-        <label for="email">
-        <input type="email" placeholder="Email Address" id="email"  required name="emails" style="color:#fff;" />
-        <div class="btn btn-danger btn-lg">
-          <a
-            href="/registration.html"
-            style="color: white; font-weight: 400; text-decoration: none"
-            >Get Start ></a
-          >
+       <form action="submit"  id="emailForm">
+        
+          <input type="email" id="email" name="email" placeholder="Enter Your Email " required>
+          <button type="submit" id="submitLink">Get Start > </button>
+          
+        </form>
         </div>
        
         </label>
@@ -313,21 +324,15 @@
           Ready to watch? Enter your email to create or restart your membership.
         </h5>
         <center>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            id="email"
-          required
+          <form action="submit">
             
-          />
-          <div class="btn btn-danger btn-lg">
-            <a
-              href=""
-              style="color: white; font-weight: 400; text-decoration: none"
-              >Get Start ></a
-            >
-          </div>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email " required>
+              <a
+                href="/registration.html"
+                style="color: white; font-weight: 400; text-decoration: none"
+                ><button type="submit">Get Start ></button></a
+              >
+            </form>
         </center>
         <hr>
        <footer>
@@ -342,6 +347,7 @@
 
       </div>
     </div>
+    
     <script>
       const buttons = document.querySelectorAll("button");
       buttons.forEach((button) => {
@@ -353,6 +359,19 @@
           icon.classList.toggle("rotate");
         });
       });
+    </script>
+    <script>
+      document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var emailInput = document.getElementById('email');
+            if (emailInput.checkValidity()) {
+                var email = emailInput.value;
+                // Replace 'your-link.html' with the actual link you want to redirect to
+                window.location.href = '/registration.html' ;
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
     </script>
   </body>
 </html>
