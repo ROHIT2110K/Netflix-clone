@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign-in </title>
+    <style>
+        
+        header{
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            height: 90px;
+            width: 100%;
+        }
+        header .signin a{
+            text-decoration: none;
+            margin-right: 40px;
+        }
+        .signin a span{
+            font-size: x-large;
+            font-weight: bold;
+            color: black;
+            line-height: 90px;
+            
+        }
+        
+        
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: calc(100% - 22px);
+        }
+        
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: blue;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 10px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #d40813;
+        }
+        
+        
+        @media (max-width: 600px) {
+            .login-box {
+                padding: 15px;
+            }
+        
+            h1 {
+                font-size: 20px;
+            }
+        
+            h2 {
+                font-size: 16px;
+            }
+        
+            input[type="email"], input[type="password"] {
+                font-size: 14px;
+            }
+        
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html"><img src="/photos/logo.png" alt="logo" height="80"></a>
+        </div>
+        <div class="signin">
+            <a href="/login.html"><span>Sign in</span></a>
+        </div>
+    </header>
+    <hr>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Welcome back!</h1>
+            <h2>Joining Netflix is easy.</h2>
+            <p>Enter your password and you'll be watching in no time.</p>
+            <form>
+                <label>Email</label>
+                <input type="email" placeholder="Enter your Email " required>
+                <label for="password">Enter your password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Next</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
